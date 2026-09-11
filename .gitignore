@@ -1,0 +1,8 @@
+data/raw/
+__pycache__/
+.ipynb_checkpoints/
+*.zip
+results/task1_bert_model.pt
+results/task3_fusion_best.pt
+results/task3_earlyconcat_best.pt
+results/task4_dual_encoder.pt

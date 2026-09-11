@@ -1,0 +1,23 @@
+{
+  "case_1_success": {
+    "track_id": 63064,
+    "true_genre": "Electronic",
+    "predicted_genre": "Electronic",
+    "text": "Underwater by Koona. Album: Underwater, Starkey. Koona \u00e8 un dubstep dj & live setter e odia le bio.",
+    "analysis": "Model correctly identifies Electronic via explicit genre-signaling text ('dubstep dj'), showing BERT branch effectively picks up direct genre vocabulary in bios."
+  },
+  "case_2_thin_text_failure": {
+    "track_id": 93521,
+    "true_genre": "Electronic",
+    "predicted_genre": "Instrumental",
+    "text": "Ivory by Moon Veil. Album: Snake Charm.",
+    "analysis": "Near-empty metadata (no bio) leaves the text branch with almost no signal, and the weak GNN branch (test Macro-F1 0.24 standalone) cannot compensate. Illustrates a core limitation of using FMA bio/title text as a tag substitute rather than true tags/captions."
+  },
+  "case_3_genre_boundary_ambiguity": {
+    "track_id": 108528,
+    "true_genre": "Electronic",
+    "predicted_genre": "Hip-Hop",
+    "text": "Funk Therapy by Ghost By Nature... exploring the outer edges of electro, hip-hop and breaks, never stopped listening to and mixing techno...",
+    "analysis": "Artist's own bio explicitly self-describes as blending electro, hip-hop, and techno. The 'incorrect' prediction reflects genuine genre ambiguity in the source material, matching the mixed Pop/Electronic/Hip-Hop/Experimental cluster observed in the t-SNE plot, rather than a model error per se."
+  }
+}

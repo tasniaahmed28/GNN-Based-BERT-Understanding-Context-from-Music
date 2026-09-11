@@ -1,0 +1,35 @@
+{
+  "task": "Task 4: Contrastive GNN-BERT (MusicCaps)",
+  "num_pairs": 400,
+  "train_size": 340,
+  "test_size": 60,
+  "epochs": 15,
+  "train_loss_history": [
+    3.4610285542228003,
+    3.4063419862227007,
+    3.3658131902868096,
+    3.316983873193914,
+    3.2456152005629106,
+    3.17915339903398,
+    3.1417620832269844,
+    3.0103660713542593,
+    2.9441764137961646,
+    2.893436540256847,
+    2.80793833732605,
+    2.747345902703025,
+    2.6989178224043413,
+    2.6038777828216553,
+    2.5301233638416636
+  ],
+  "retrieval_metrics": {
+    "audio2caption_R@1": 0.03333333507180214,
+    "caption2audio_R@1": 0.03333333507180214,
+    "audio2caption_R@5": 0.11666666716337204,
+    "caption2audio_R@5": 0.15000000596046448,
+    "audio2caption_R@10": 0.2666666805744171,
+    "caption2audio_R@10": 0.3166666626930237
+  },
+  "zero_shot_macro_f1": 0.10685252247752247,
+  "task3_supervised_macro_f1": 0.576242440002408,
+  "note": "Retrieval shows above-chance but weak alignment; embedding space shows partial collapse across queries, likely due to limited chroma graph signal and small training scale (400 pairs, 15 epochs). Zero-shot transfer to FMA genre underperforms random chance, motivating supervised fusion (Task 3) over pure contrastive transfer at this scale."
+}
